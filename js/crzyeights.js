@@ -75,9 +75,9 @@ function Player(playerNumber) {
 	this.hand = [];
 	this.showHand = function() {
 		fullHand = [];
-		for (k = 0; k < this.hand.length; k++) {
-			fullHand.push(this.hand[k].rank + this.hand[k].suit);
-		}
+		_.map(this.hand, function(card) {
+			fullHand.push(card.rank + card.suit);
+		})
 		return fullHand;
 	}
 }
@@ -153,7 +153,7 @@ function CrazyEights() {
 				$("#statbox").
 					append("<li>" + curPlayer.playerName + " was the winner!</li>" +
 						"<li>The game ended on round " + this.statRound + ".</li>" +
-						"<li>There were " + this.statEight + " eights played.</li>");
+						"<li>There was(were) " + this.statEight + " eight(s) played.</li>");
 			}
 			else {
 				alert("You have " + curPlayer.hand.length + " cards left \n" + curPlayer.showHand()); 
