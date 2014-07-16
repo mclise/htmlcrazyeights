@@ -18,35 +18,35 @@ function Deck() {
 				this.cards.push(new Card(r, s));  
 			}
 		}
-		for (i = 0; i < this.cards.length; i++) {
-			if (this.cards[i].suit == 1) {
-				this.cards[i].suit = "h";
+		_.map(this.cards, function(crd) {
+			if (crd.suit === 1) {
+				crd.suit = "h";
 			}
-			else if (this.cards[i].suit == 2) {
-				this.cards[i].suit = "d";
+			else if (crd.suit === 2) {
+				crd.suit = "d";
 			}
-			else if (this.cards[i].suit == 3) {
-				this.cards[i].suit = "s";
+			else if (crd.suit === 3) {
+				crd.suit = "s";
 			}
-			else if (this.cards[i].suit == 4) {
-				this.cards[i].suit = "c";
+			else if (crd.suit === 4) {
+				crd.suit = "c";
 			}
-			if (this.cards[i].rank == 1) {
-				this.cards[i].rank = "A";
+			if (crd.rank === 1) {
+				crd.rank = "A";
 			}
-			else if (this.cards[i].rank == 10) {
-				this.cards[i].rank = "T";
+			else if (crd.rank === 10) {
+				crd.rank = "T";
 			}
-			else if (this.cards[i].rank == 11) {
-				this.cards[i].rank = "J";
+			else if (crd.rank === 11) {
+				crd.rank = "J";
 			}
-			else if (this.cards[i].rank == 12) {
-				this.cards[i].rank = "Q";
+			else if (crd.rank === 12) {
+				crd.rank = "Q";
 			}
-			else if (this.cards[i].rank == 13) {
-				this.cards[i].rank = "K";
+			else if (crd.rank === 13) {
+				crd.rank = "K";
 			}
-		}
+		})
 	}
 	this.firstFlip = function() {				    	// This flips the top card from the deck to the discard pile to 
 		this.discard.push(this.cards.pop());		// start the game.		  
